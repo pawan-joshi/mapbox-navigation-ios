@@ -8,8 +8,8 @@ import Turf
 class ArrowFillPolyline: MGLPolylineFeature {}
 class ArrowStrokePolyline: ArrowFillPolyline {}
 
-open class RouteMapViewController: UIViewController {
-    open var navigationView: NavigationView { return view as! NavigationView }
+class RouteMapViewController: UIViewController {
+    var navigationView: NavigationView { return view as! NavigationView }
     var mapView: NavigationMapView { return navigationView.mapView }
     var reportButton: FloatingButton { return navigationView.reportButton }
     var topBannerContainerView: BannerContainerView { return navigationView.topBannerContainerView }

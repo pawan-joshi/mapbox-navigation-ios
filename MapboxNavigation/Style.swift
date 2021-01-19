@@ -141,7 +141,7 @@ public class HighlightedButton: Button { }
 /// :nodoc:
 @IBDesignable
 @objc(MBResumeButton)
-open class ResumeButton: UIControl {
+public class ResumeButton: UIControl {
     public override dynamic var tintColor: UIColor! {
         didSet {
             imageView.tintColor = tintColor
@@ -149,7 +149,7 @@ open class ResumeButton: UIControl {
         }
     }
     
-    open var position: ResumeButtonPosition = .bottomLeft
+    var position: ResumeButtonPosition = .bottomLeft
     
     let imageView = UIImageView(image: UIImage(named: "location", in: .mapboxNavigation, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate))
     let titleLabel = UILabel()
