@@ -8,8 +8,8 @@ import Turf
 class ArrowFillPolyline: MGLPolylineFeature {}
 class ArrowStrokePolyline: ArrowFillPolyline {}
 
-class RouteMapViewController: UIViewController {
-    var navigationView: NavigationView { return view as! NavigationView }
+open class RouteMapViewController: UIViewController {
+    open var navigationView: NavigationView { return view as! NavigationView }
     var mapView: NavigationMapView { return navigationView.mapView }
     var reportButton: FloatingButton { return navigationView.reportButton }
     var topBannerContainerView: BannerContainerView { return navigationView.topBannerContainerView }
@@ -528,12 +528,12 @@ extension RouteMapViewController: NavigationViewDelegate {
 
     // MARK: NavigationMapViewCourseTrackingDelegate
     func navigationMapViewDidStartTrackingCourse(_ mapView: NavigationMapView) {
-        navigationView.resumeButton.isHidden = true
+        //navigationView.resumeButton.isHidden = true
         mapView.logoView.isHidden = false
     }
 
     func navigationMapViewDidStopTrackingCourse(_ mapView: NavigationMapView) {
-        navigationView.resumeButton.isHidden = false
+        //navigationView.resumeButton.isHidden = false
         navigationView.wayNameView.isHidden = true
         mapView.logoView.isHidden = true
     }

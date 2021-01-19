@@ -74,7 +74,7 @@ open class NavigationView: UIView {
     lazy var muteButton = FloatingButton.rounded(image: Images.volumeUp, selectedImage: Images.volumeOff)
     lazy var reportButton = FloatingButton.rounded(image: Images.feedback)
     
-    lazy var resumeButton: ResumeButton = .forAutoLayout()
+    open lazy var resumeButton: ResumeButton = .forAutoLayout()
     
     lazy var wayNameView: WayNameView = {
         let view: WayNameView = .forAutoLayout(hidden: true)

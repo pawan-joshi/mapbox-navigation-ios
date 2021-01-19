@@ -14,8 +14,23 @@ extension NavigationView {
         floatingStackView.topAnchor.constraint(equalTo: topBannerContainerView.bottomAnchor, constant: 10).isActive = true
         floatingStackView.trailingAnchor.constraint(equalTo: safeTrailingAnchor, constant: -10).isActive = true
         
-        resumeButton.leadingAnchor.constraint(equalTo: safeLeadingAnchor, constant: 10).isActive = true
-        resumeButton.bottomAnchor.constraint(equalTo: bottomBannerContainerView.topAnchor, constant: -10).isActive = true
+        switch resumeButton.position {
+        case .bottomRight:
+            resumeButton.trailingAnchor.constraint(equalTo: safeTrailingAnchor, constant: 10).isActive = true
+            resumeButton.bottomAnchor.constraint(equalTo: bottomBannerContainerView.topAnchor, constant: -10).isActive = true
+        case .bottomLeft:
+            resumeButton.leadingAnchor.constraint(equalTo: safeLeadingAnchor, constant: 10).isActive = true
+            resumeButton.bottomAnchor.constraint(equalTo: bottomBannerContainerView.topAnchor, constant: -10).isActive = true
+        case .topRight:
+            resumeButton.trailingAnchor.constraint(equalTo: safeTrailingAnchor, constant: 10).isActive = true
+            resumeButton.bottomAnchor.constraint(equalTo: topBannerContainerView.bottomAnchor, constant: -10).isActive = true
+        case .topLeft:
+            resumeButton.leadingAnchor.constraint(equalTo: safeLeadingAnchor, constant: 10).isActive = true
+            resumeButton.bottomAnchor.constraint(equalTo: topBannerContainerView.bottomAnchor, constant: -10).isActive = true
+        default:
+            break
+        }
+        
 
         bottomBannerContainerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         bottomBannerContainerView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true

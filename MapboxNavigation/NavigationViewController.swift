@@ -155,7 +155,7 @@ open class NavigationViewController: UIViewController, NavigationStatusPresenter
         }
     }
     
-    var mapViewController: RouteMapViewController?
+    open var mapViewController: RouteMapViewController?
     
     var topViewController: ContainerViewController?
     

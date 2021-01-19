@@ -1,5 +1,11 @@
 import UIKit
 
+open enum ResumeButtonPosition: Int {
+    case topRight = 0
+    case topLeft = 1
+    case bottomRight = 2
+    case bottomLeft = 3
+}
 /**
  `Style` is a convenient wrapper for styling the appearance of various interface components throughout the Navigation UI.
  
@@ -135,13 +141,15 @@ public class HighlightedButton: Button { }
 /// :nodoc:
 @IBDesignable
 @objc(MBResumeButton)
-public class ResumeButton: UIControl {
+open class ResumeButton: UIControl {
     public override dynamic var tintColor: UIColor! {
         didSet {
             imageView.tintColor = tintColor
             titleLabel.textColor = tintColor
         }
     }
+    
+    open var position: ResumeButtonPosition = .bottomLeft
     
     let imageView = UIImageView(image: UIImage(named: "location", in: .mapboxNavigation, compatibleWith: nil)!.withRenderingMode(.alwaysTemplate))
     let titleLabel = UILabel()
